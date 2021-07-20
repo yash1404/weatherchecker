@@ -1,1 +1,1 @@
-# weatherchecker
+# Weather checker app using API
