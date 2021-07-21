@@ -20,13 +20,13 @@ try{
   const weatherdata=await response.json();
   console.log(weatherdata);
   const {name}=weatherdata;
-  const{feels_like}=weatherdata.main;
+  const{temp}=weatherdata.main;
   const{id,main}=weatherdata.weather[0];
 
   
   locationname.textContent=name;
   climate.textContent=main;
-  tempvalue.textContent=Math.round(feels_like-283.15);
+  tempvalue.textContent=Math.round(temp-273.15);
 
   if(id>=200 && id<=300){
     tempicon.src="./img/stormcloud.png"
@@ -74,12 +74,12 @@ window.addEventListener("load",()=>{
     .then((data)=>{
       console.log(data)
       const{name}=data;
-      const{feels_like}=data.main;
+      const{temp}=data.main;
       const{id,main}=data.weather[0];
 
       locationname.textContent=name;
       climate.textContent=main;
-      tempvalue.textContent=Math.round(feels_like-283.15);
+      tempvalue.textContent=Math.round(temp-273.15);
 if(id>=200 && id<=300){
   tempicon.src="./img/stormcloud.png"
 }
